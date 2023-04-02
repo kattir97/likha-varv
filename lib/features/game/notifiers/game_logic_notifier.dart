@@ -4,17 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:likha_varv/core/data/letters.dart';
 import 'package:likha_varv/core/models/word.dart';
+import 'package:likha_varv/core/services/shared_prefs_service.dart';
 import 'package:likha_varv/features/game/domain/strings.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class GameLogic extends StateNotifier<List<String>> {
   GameLogic() : super([]);
-  // Shared Preferences
-  final String scoreKey = 'score';
-  final String userMatchesKey = 'userMatches';
-  final String possibleMatchesKey = 'possibleMatches';
-  final String isFirstOpenKey = 'isFirstOpen';
-  final String generatedLettersKey = 'generated_letters';
 
   List<Word> rawList = [];
   List<String> words = [];
@@ -27,31 +21,18 @@ class GameLogic extends StateNotifier<List<String>> {
 
   // Shared Prefs methods
   Future<void> saveGameData() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setInt(scoreKey, score);
-    await prefs.setStringList(userMatchesKey, userMatches);
-    await prefs.setStringList(possibleMatchesKey, possibleMatches);
-    await prefs.setStringList(generatedLettersKey, state);
+    await SharedPrefsService.saveScore(score);
+    await SharedPrefsService.saveUserMatches(userMatches);
+    await SharedPrefsService.savePossibleMatches(possibleMatches);
+    await SharedPrefsService.saveGeneratedLetters(state);
   }
 
   Future<void> loadGameData() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    score = prefs.getInt(scoreKey) ?? 0;
-    userMatches = prefs.getStringList(userMatchesKey) ?? [];
-    possibleMatches = prefs.getStringList(possibleMatchesKey) ?? [];
-    state = prefs.getStringList(generatedLettersKey) ?? [];
+    score = await SharedPrefsService.getScore();
+    userMatches = await SharedPrefsService.getUserMatches();
+    possibleMatches = await SharedPrefsService.getPossibleMatches();
+    state = await SharedPrefsService.getGeneratedLetters();
     state = List.from(state);
-    print(state);
-  }
-
-  Future<bool> checkFirstOpen() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getBool(isFirstOpenKey) ?? true;
-  }
-
-  Future<void> setIsFirstOpen(bool value) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool(isFirstOpenKey, value);
   }
 
   // Shared Prefes End
