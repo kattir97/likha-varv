@@ -1,0 +1,43 @@
+lib/
+|-- common/
+|   |-- widgets/
+|   |   |-- appbar_widget.dart
+|   |   |-- button_widget.dart
+|   |   |-- timer_widget.dart
+|-- core/
+|   |-- models/
+|   |   |-- letter.dart
+|   |   |-- word.dart
+|   |-- services/
+|   |   |-- dictionary_service.dart
+|   |-- utils/
+|   |   |-- game_difficulty.dart
+|   |   |-- game_timer.dart
+|-- features/
+|   |-- game/
+|   |   |-- data/
+|   |   |   |-- game_repository.dart
+|   |   |-- domain/
+|   |   |   |-- game_logic.dart
+|   |   |-- presentation/
+|   |   |   |-- providers/
+|   |   |   |   |-- game_providers.dart
+|   |   |   |-- screens/
+|   |   |   |   |-- game_screen.dart
+|   |   |   |-- widgets/
+|   |   |   |   |-- cell_widget.dart
+|   |   |   |   |-- letter_tile_widget.dart
+|   |   |   |   |-- score_widget.dart
+|   |   |   |   |-- word_list_widget.dart
+|   |-- home/
+|   |   |-- presentation/
+|   |   |   |-- screens/
+|   |   |   |   |-- home_screen.dart
+|   |   |   |-- widgets/
+|   |   |   |   |-- game_card_widget.dart
+|   |   |   |   |-- game_info_widget.dart
+|   |   |   |   |-- game_preview_widget.dart
+|   |   |   |   |-- header_widget.dart
+|   |   |   |   |-- info_card_widget.dart
+|   |   |   |   |-- start_button_widget.dart
+|-- main.dart
