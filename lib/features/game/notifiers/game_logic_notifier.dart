@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:likha_varv/core/data/letters.dart';
-import 'package:likha_varv/core/models/word/word.dart';
+import 'package:likha_varv/core/models/word.dart';
 import 'package:likha_varv/core/services/shared_prefs_service.dart';
 import 'package:likha_varv/features/game/domain/strings.dart';
 
