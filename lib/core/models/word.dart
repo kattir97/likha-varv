@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:likha_varv/core/models/definition/definition.dart';
-import 'package:likha_varv/core/models/word_from/word_from.dart';
+import 'package:likha_varv/core/models/definition.dart';
+import 'package:likha_varv/core/models/word_from.dart';
 
 part 'word.freezed.dart';
 part 'word.g.dart';

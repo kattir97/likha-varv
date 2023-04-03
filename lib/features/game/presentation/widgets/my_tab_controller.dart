@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:likha_varv/features/game/presentation/screens/game_screen.dart';
 import 'package:likha_varv/features/game/presentation/screens/info_screen.dart';
 import 'package:likha_varv/features/game/presentation/widgets/guessed_words_widget.dart';
@@ -39,13 +40,7 @@ class _MyTabControllerState extends State<MyTabController>
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
-                'likha varv',
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontFamily: 'Pacifico',
-                ),
-              ),
+              Text('likha varv', style: GoogleFonts.pacifico(fontSize: 24)),
               Row(
                 children: [
                   const SizedBox(width: 15),
