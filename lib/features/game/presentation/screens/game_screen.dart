@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:likha_varv/features/game/domain/show_error_snack_bar.dart';
-import 'package:likha_varv/features/game/domain/show_overlay_indicator.dart';
-import 'package:likha_varv/features/game/domain/strings.dart';
+import 'package:likha_varv/core/models/word.dart';
+
+import 'package:likha_varv/features/game/data/constants/strings.dart';
+import 'package:likha_varv/features/game/presentation/utils/show_error_snack_bar.dart';
+import 'package:likha_varv/features/game/presentation/utils/show_overlay_indicator.dart';
 import 'package:likha_varv/features/game/presentation/widgets/congrats_widget.dart';
 import 'package:likha_varv/features/game/presentation/widgets/letters_widget.dart';
 import 'package:likha_varv/features/game/presentation/widgets/light_blue_button_widget.dart';
 import 'package:likha_varv/features/game/presentation/widgets/score_slider_widget.dart';
 import 'package:likha_varv/features/game/presentation/widgets/user_input_widget.dart';
-import 'package:likha_varv/features/game/presentation/riverpod/providers/game_logic_provider.dart';
+import 'package:likha_varv/features/game/domain/providers/game_logic_provider.dart';
 
 class GameScreen extends ConsumerStatefulWidget {
   const GameScreen({super.key});
@@ -131,6 +133,12 @@ Future<void> _showAnswer(ref, context) {
       final gameLogic = ref.read(gameLogicProvider.notifier);
       final posMatches = gameLogic.possibleMatches;
       final userMatches = gameLogic.userMatches;
+      final List<Word> wordsRaw = gameLogic.rawList;
+      final words = wordsRaw.where((word) {
+        // print('word: ${word.headword}');
+        return posMatches.contains(word.headword);
+      }).toList();
+
       return AlertDialog(
         title: const Text('Results:'),
         content: SizedBox(
@@ -141,16 +149,16 @@ Future<void> _showAnswer(ref, context) {
             children: [
               Expanded(
                 child: ListView.builder(
-                  itemCount: posMatches.length,
+                  itemCount: words.length,
                   itemBuilder: (context, index) {
-                    final word = posMatches.elementAt(index);
-                    final isFound = userMatches.contains(word);
+                    final word = words.elementAt(index);
+                    final isFound = userMatches.contains(word.headword);
                     final MaterialColor color =
                         isFound ? Colors.green : Colors.red;
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 4.0),
                       child: Text(
-                        '${index + 1}. $word',
+                        '${index + 1}. ${word.headword} - ${word.definitions?.first.translation}',
                         style: TextStyle(color: color),
                       ),
                     );

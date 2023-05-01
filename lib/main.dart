@@ -3,8 +3,8 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:likha_varv/core/providers/dictionary_provider.dart';
 import 'package:likha_varv/features/game/presentation/widgets/my_tab_controller.dart';
-import 'package:likha_varv/features/game/presentation/riverpod/providers/check_prefs_provider.dart';
-import 'package:likha_varv/features/game/presentation/riverpod/providers/game_logic_provider.dart';
+import 'package:likha_varv/features/game/domain/providers/check_prefs_provider.dart';
+import 'package:likha_varv/features/game/domain/providers/game_logic_provider.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +35,6 @@ class AwaitDictionary extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final dictionary = ref.watch(dictionaryProvider);
-    final gameLogic = ref.watch(gameLogicProvider.notifier);
     return Scaffold(
       body: dictionary.when(
         data: (_) {

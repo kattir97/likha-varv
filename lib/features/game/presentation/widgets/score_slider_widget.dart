@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:likha_varv/features/game/presentation/riverpod/providers/game_logic_provider.dart';
+import 'package:likha_varv/features/game/domain/providers/game_logic_provider.dart';
 
 class ScoreSliderWidget extends HookConsumerWidget {
   const ScoreSliderWidget({Key? key}) : super(key: key);

@@ -5,7 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:likha_varv/core/data/letters.dart';
 import 'package:likha_varv/core/models/word.dart';
 import 'package:likha_varv/core/services/shared_prefs_service.dart';
-import 'package:likha_varv/features/game/domain/strings.dart';
+import 'package:likha_varv/features/game/data/constants/strings.dart';
 
 class GameLogic extends StateNotifier<List<String>> {
   GameLogic() : super([]);
@@ -74,25 +74,21 @@ class GameLogic extends StateNotifier<List<String>> {
   }
 
   void generatePossibleMatches() {
-    possibleMatches.clear();
-    Set<String> usedWords = {};
+    Set<String> possibleMatchesSet = {};
     for (String word in words) {
-      List<String> remainingLetters = List<String>.from(state);
       bool possible = true;
       for (int i = 0; i < word.length; i++) {
         String letter = word[i];
-        if (remainingLetters.contains(letter)) {
-          remainingLetters.remove(letter);
-        } else {
+        if (!state.contains(letter)) {
           possible = false;
           break;
         }
       }
-      if (possible && !usedWords.contains(word)) {
-        possibleMatches.add(word);
-        usedWords.add(word);
+      if (possible) {
+        possibleMatchesSet.add(word);
       }
     }
+    possibleMatches = possibleMatchesSet.toList();
     print(possibleMatches);
   }
 

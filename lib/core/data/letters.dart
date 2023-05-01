@@ -1,4 +1,4 @@
-List<String> letterList = [
+const letterList = [
   "a",
   "ä",
   "b",
@@ -31,5 +31,5 @@ List<String> letterList = [
   "x",
   "y",
   "z",
-  "ž",
+  "ž"
 ];
