@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:likha_varv/features/game/presentation/screens/game_screen.dart';
-import 'package:likha_varv/features/game/presentation/screens/info_screen.dart';
-import 'package:likha_varv/features/game/presentation/widgets/guessed_words_widget.dart';
+import 'package:likha_varv/features/game_logic/presentation/screens/game_screen.dart';
+import 'package:likha_varv/features/game_logic/presentation/screens/info_screen.dart';
+import 'package:likha_varv/features/game_logic/presentation/widgets/guessed_words_widget.dart';
 
 class MyTabController extends StatefulWidget {
   const MyTabController({super.key});

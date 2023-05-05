@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:likha_varv/core/providers/dictionary_provider.dart';
-import 'package:likha_varv/features/game/presentation/screens/game_screen.dart';
-import 'package:likha_varv/features/game/presentation/widgets/my_tab_controller.dart';
-import 'package:likha_varv/features/game/domain/providers/check_prefs_provider.dart';
-import 'package:likha_varv/features/game/domain/providers/game_logic_provider.dart';
+import 'package:likha_varv/features/game_logic/presentation/screens/game_screen.dart';
+import 'package:likha_varv/features/game_logic/presentation/widgets/my_tab_controller.dart';
+import 'package:likha_varv/features/game_logic/domain/providers/check_prefs_provider.dart';
+import 'package:likha_varv/features/game_logic/domain/providers/game_logic_provider.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();

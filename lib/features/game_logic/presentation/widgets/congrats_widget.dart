@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:likha_varv/core/models/word.dart';
-import 'package:likha_varv/features/game/domain/providers/game_logic_provider.dart';
+import 'package:likha_varv/features/game_logic/domain/providers/game_logic_provider.dart';
 
 class CongratsMessage extends ConsumerWidget {
   final VoidCallback onRestartPressed;

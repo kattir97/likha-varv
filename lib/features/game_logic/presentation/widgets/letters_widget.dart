@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:likha_varv/features/game/presentation/widgets/letter_widget.dart';
+import 'package:likha_varv/features/game_logic/presentation/widgets/letter_widget.dart';
 
 class Letters extends StatelessWidget {
   final List<String> letters;
