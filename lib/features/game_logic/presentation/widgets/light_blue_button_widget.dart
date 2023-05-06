@@ -12,23 +12,32 @@ class LightBlueButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 40,
+    return Container(
       width: 100,
-      child: ElevatedButton(
+      height: 40,
+      margin: const EdgeInsets.all(2),
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(10.0),
+        border: Border.all(
+          color: Colors.grey,
+          width: 1.0,
+        ),
+      ),
+      child: TextButton(
         onPressed: onTap,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.lightBlue[200],
-          foregroundColor: Colors.white,
+        style: TextButton.styleFrom(
+          padding: const EdgeInsets.all(16.0),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
+            borderRadius: BorderRadius.circular(16.0),
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         ),
         child: Text(
           title,
+          textAlign: TextAlign.center,
           style: const TextStyle(
-            fontSize: 18.0,
+            color: Colors.black,
+            fontSize: 16.0,
             fontWeight: FontWeight.bold,
           ),
         ),

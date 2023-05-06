@@ -66,7 +66,7 @@ class InfoDialogWidget extends StatelessWidget {
                   '"Guessed" tab at the top of the screen.\n\n'
                   '5. The game ends when you have found all the possible words '
                   'or when you tap "Finish". Good luck!',
-                  style: TextStyle(fontSize: 16.0),
+                  style: TextStyle(fontSize: 14.0),
                   textAlign: TextAlign.left,
                 ),
               ],

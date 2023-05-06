@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:likha_varv/features/game_logic/presentation/widgets/words_modal.dart';
 import 'package:likha_varv/features/info/info_dialog_widget.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -35,6 +36,7 @@ class VarvAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         Row(
           children: [
+            const SizedBox(width: 16),
             IconButton(
               icon: const Icon(
                 LineIcons.trophy,

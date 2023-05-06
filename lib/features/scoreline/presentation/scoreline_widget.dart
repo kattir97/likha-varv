@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:likha_varv/features/game_logic/domain/providers/game_logic_provider.dart';
+import 'package:likha_varv/features/game_logic/presentation/widgets/words_modal.dart';
+import 'package:likha_varv/features/info/info_dialog_widget.dart';
 import 'package:likha_varv/features/scoreline/domain/scoreline_service.dart';
 import 'package:likha_varv/features/scoreline/presentation/custom_slider_widget.dart';
 import 'package:line_icons/line_icons.dart';
@@ -24,56 +26,59 @@ class ScorelineWidget extends ConsumerWidget {
     final pointsToNextRank = service.calculatePointsToNextRank(score);
     final nextRank = service.getNextRank(currentRank);
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                currentRank,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                  fontFamily: 'Lato',
-                ),
-              ),
-              Text.rich(
-                TextSpan(
-                  children: [
-                    TextSpan(
-                      text: '$pointsToNextRank',
-                      style: const TextStyle(
-                          fontSize: 12, fontWeight: FontWeight.bold),
-                    ),
-                    TextSpan(
-                      text: ' to $nextRank',
-                      style: const TextStyle(fontSize: 12),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          Expanded(
-            child: Row(
+    return InkWell(
+      onTap: () => const InfoDialogWidget(),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CustomSliderWidget(
-                    possibleScore: possibleScore,
-                    score: score,
-                    service: service),
+                Text(
+                  currentRank,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    fontFamily: 'Lato',
+                  ),
+                ),
+                Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: '$pointsToNextRank',
+                        style: const TextStyle(
+                            fontSize: 12, fontWeight: FontWeight.bold),
+                      ),
+                      TextSpan(
+                        text: ' to $nextRank',
+                        style: const TextStyle(fontSize: 12),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
-          ),
-          const Icon(
-            LineIcons.crown,
-            color: Colors.amber,
-          )
-        ],
+            Expanded(
+              child: Row(
+                children: [
+                  CustomSliderWidget(
+                      possibleScore: possibleScore,
+                      score: score,
+                      service: service),
+                ],
+              ),
+            ),
+            const Icon(
+              LineIcons.crown,
+              color: Colors.amber,
+            )
+          ],
+        ),
       ),
     );
   }
