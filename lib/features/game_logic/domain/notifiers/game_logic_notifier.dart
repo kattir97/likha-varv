@@ -10,8 +10,7 @@ import 'package:likha_varv/features/game_logic/data/constants/strings.dart';
 class GameLogic extends StateNotifier<List<String>> {
   GameLogic() : super([]);
 
-  List<Word> rawList = [];
-  List<String> words = [];
+  List<Word> words = [];
   List<String> letters = letterList;
   int score = 0;
   List<String> userMatches = [];
@@ -75,8 +74,8 @@ class GameLogic extends StateNotifier<List<String>> {
 
   void generatePossibleMatches() {
     Set<String> possibleMatchesSet = {};
-    for (String word in words) {
-      bool possible = true;
+    for (var word in words.map((w) => w.headword!)) {
+      var possible = true;
       for (int i = 0; i < word.length; i++) {
         String letter = word[i];
         if (!state.contains(letter)) {

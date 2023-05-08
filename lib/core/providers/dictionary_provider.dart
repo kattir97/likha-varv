@@ -15,9 +15,6 @@ final dictionaryProvider = FutureProvider<List<Word>>((ref) async {
 
   final List<Word> wordList = jsonList.map((e) => Word.fromJson(e)).toList();
 
-  final words = wordList.map((wordObj) => wordObj.headword as String).toList();
-  ref.read(gameLogicProvider.notifier).rawList =
-      wordList.map((e) => e).toList();
-  ref.read(gameLogicProvider.notifier).words = words;
+  ref.read(gameLogicProvider.notifier).words = wordList.map((e) => e).toList();
   return wordList;
 });

@@ -11,7 +11,7 @@ class WordsModal extends ConsumerWidget {
     ref.watch(gameLogicProvider);
     final gameLogic = ref.read(gameLogicProvider.notifier);
     final guessedWords = gameLogic.userMatches;
-    List<Word> words = gameLogic.rawList
+    List<Word> words = gameLogic.words
         .where((word) => guessedWords.contains(word.headword))
         .toList();
 
