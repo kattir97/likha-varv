@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:likha_varv/features/game_logic/presentation/widgets/words_modal.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:likha_varv/features/game_logic/presentation/utils/show_answer.dart';
 import 'package:likha_varv/features/info/info_dialog_widget.dart';
+import 'package:likha_varv/features/rankings/presentation/rankings_widget.dart';
 import 'package:line_icons/line_icons.dart';
 
-class VarvAppBar extends StatelessWidget implements PreferredSizeWidget {
+class VarvAppBar extends ConsumerWidget implements PreferredSizeWidget {
   @override
   final Size preferredSize;
 
@@ -13,7 +15,7 @@ class VarvAppBar extends StatelessWidget implements PreferredSizeWidget {
         super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return AppBar(
       iconTheme: const IconThemeData(
         color: Colors.black, // specify the color here
@@ -36,24 +38,31 @@ class VarvAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         Row(
           children: [
-            const SizedBox(width: 16),
+            IconButton(
+              onPressed: () async {
+                return showAnswer(ref, context);
+              },
+              icon: const Icon(LineIcons.alternateRedo),
+            ),
             IconButton(
               icon: const Icon(
                 LineIcons.trophy,
               ),
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => const RankingsWidget(),
+                );
+              },
             ),
-            const SizedBox(width: 16), // add a space between the icons
             IconButton(
-              icon: const Icon(LineIcons.signal),
+              icon: const Icon(LineIcons.barChartAlt),
               onPressed: () {},
             ),
-            const SizedBox(width: 16), // add a space between the icons
             IconButton(
               icon: const Icon(LineIcons.cog),
               onPressed: () {},
             ),
-            const SizedBox(width: 16), // add a space between the icons
             IconButton(
               icon: const Icon(LineIcons.infoCircle),
               onPressed: () {

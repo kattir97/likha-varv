@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:likha_varv/features/game_logic/domain/providers/game_logic_provider.dart';
-import 'package:likha_varv/features/game_logic/presentation/widgets/words_modal.dart';
-import 'package:likha_varv/features/info/info_dialog_widget.dart';
-import 'package:likha_varv/features/scoreline/domain/scoreline_service.dart';
-import 'package:likha_varv/features/scoreline/presentation/custom_slider_widget.dart';
+import 'package:likha_varv/features/rankings/domain/scoreline_service.dart';
+import 'package:likha_varv/features/rankings/presentation/custom_slider_widget.dart';
+import 'package:likha_varv/features/rankings/presentation/rankings_widget.dart';
 import 'package:line_icons/line_icons.dart';
 
 class ScorelineWidget extends ConsumerWidget {
@@ -27,7 +26,10 @@ class ScorelineWidget extends ConsumerWidget {
     final nextRank = service.getNextRank(currentRank);
 
     return InkWell(
-      onTap: () => const InfoDialogWidget(),
+      onTap: () => showDialog(
+        context: context,
+        builder: (context) => const RankingsWidget(),
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Row(
@@ -64,13 +66,11 @@ class ScorelineWidget extends ConsumerWidget {
               ],
             ),
             Expanded(
-              child: Row(
-                children: [
-                  CustomSliderWidget(
-                      possibleScore: possibleScore,
-                      score: score,
-                      service: service),
-                ],
+              child: IgnorePointer(
+                child: CustomSliderWidget(
+                    possibleScore: possibleScore,
+                    score: score,
+                    service: service),
               ),
             ),
             const Icon(

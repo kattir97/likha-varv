@@ -47,7 +47,7 @@ class GameLogic extends StateNotifier<List<String>> {
     state.clear();
     score = 0;
     generateLetters();
-    while (possibleMatches.isEmpty || possibleMatches.length < 5) {
+    while (possibleMatches.isEmpty || possibleMatches.length < 8) {
       generateLetters();
     }
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:likha_varv/features/scoreline/domain/scoreline_service.dart';
+import 'package:likha_varv/features/rankings/domain/scoreline_service.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
 

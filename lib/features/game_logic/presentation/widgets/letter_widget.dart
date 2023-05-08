@@ -14,8 +14,8 @@ class LetterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 60.0,
-      height: 60.0,
+      width: 70.0,
+      height: 70.0,
       decoration: BoxDecoration(
         color: bgColor,
         shape: BoxShape.circle,

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:likha_varv/features/game_logic/data/constants/strings.dart';
 import 'package:likha_varv/features/game_logic/domain/notifiers/game_logic_notifier.dart';
-import 'package:likha_varv/features/game_logic/presentation/utils/show_answer.dart';
 import 'package:likha_varv/features/game_logic/presentation/utils/show_error_snack_bar.dart';
 import 'package:likha_varv/features/game_logic/presentation/utils/show_overlay_indicator.dart';
 import 'package:likha_varv/features/game_logic/presentation/widgets/congrats_widget.dart';
 import 'package:likha_varv/features/game_logic/presentation/widgets/light_blue_button_widget.dart';
+import 'package:line_icons/line_icons.dart';
 
 class GameScreenButtons extends StatelessWidget {
   const GameScreenButtons({
@@ -28,10 +28,31 @@ class GameScreenButtons extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             LightBlueButtonWidget(
-              title: 'Shuffle',
+              title: 'Delete',
               onTap: () {
-                gameLogic.shuffle();
+                final input = textController.text;
+                if (input.isNotEmpty) {
+                  textController.text = input.substring(0, input.length - 1);
+                }
               },
+            ),
+            const SizedBox(width: 10),
+            Container(
+              width: 50,
+              height: 50,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: Colors.black,
+                  width: 1,
+                ),
+              ),
+              child: IconButton(
+                icon: const Icon(LineIcons.random),
+                onPressed: () {
+                  gameLogic.shuffle();
+                },
+              ),
             ),
             const SizedBox(width: 10),
             LightBlueButtonWidget(
@@ -58,28 +79,6 @@ class GameScreenButtons extends StatelessWidget {
                   }
                 }
                 textController.clear();
-              },
-            ),
-          ],
-        ),
-        const SizedBox(height: 12),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            LightBlueButtonWidget(
-              title: 'Finish',
-              onTap: () async {
-                return showAnswer(ref, context);
-              },
-            ),
-            const SizedBox(width: 10),
-            LightBlueButtonWidget(
-              title: 'Delete',
-              onTap: () {
-                final input = textController.text;
-                if (input.isNotEmpty) {
-                  textController.text = input.substring(0, input.length - 1);
-                }
               },
             ),
           ],

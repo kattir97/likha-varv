@@ -14,7 +14,7 @@ class LightBlueButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 100,
-      height: 40,
+      height: 50,
       margin: const EdgeInsets.all(2),
       decoration: BoxDecoration(
         color: Colors.transparent,

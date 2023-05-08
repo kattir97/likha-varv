@@ -19,6 +19,7 @@ class WordsModal extends ConsumerWidget {
       color: Colors.white,
       padding: const EdgeInsets.all(8.0),
       child: ListView.separated(
+        padding: const EdgeInsets.all(0),
         separatorBuilder: (context, index) => const Divider(),
         itemCount: words.length,
         itemBuilder: (context, index) {
@@ -26,6 +27,8 @@ class WordsModal extends ConsumerWidget {
           List<String?>? definitions =
               word.definitions?.map((def) => def.translation).toList();
           return ListTile(
+            visualDensity: const VisualDensity(horizontal: 0, vertical: -4),
+            contentPadding: const EdgeInsets.only(top: 0.0, bottom: 0.0),
             title: Text(word.headword!),
             subtitle: Text(
               definitions!.where((element) => element != null).join(', '),

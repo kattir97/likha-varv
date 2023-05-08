@@ -7,7 +7,7 @@ import 'package:likha_varv/features/game_logic/presentation/widgets/letters_widg
 import 'package:likha_varv/features/game_logic/presentation/widgets/user_input_widget.dart';
 import 'package:likha_varv/features/game_logic/domain/providers/game_logic_provider.dart';
 import 'package:likha_varv/features/game_logic/presentation/widgets/varv_app_bar_widget.dart';
-import 'package:likha_varv/features/scoreline/presentation/scoreline_widget.dart';
+import 'package:likha_varv/features/rankings/presentation/scoreline_widget.dart';
 
 class GameScreen extends ConsumerStatefulWidget {
   const GameScreen({super.key});
@@ -59,9 +59,13 @@ class _GameScreenState extends ConsumerState<GameScreen> {
                   height: 10,
                 ),
                 GameScreenButtons(
-                    gameLogic: gameLogic,
-                    textController: textController,
-                    ref: ref),
+                  gameLogic: gameLogic,
+                  textController: textController,
+                  ref: ref,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
               ],
             ),
           ],

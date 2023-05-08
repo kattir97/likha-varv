@@ -15,7 +15,7 @@ class Letters extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double radius = 70.0;
+    const double radius = 80.0;
 
     return SizedBox(
       height: double.infinity,
