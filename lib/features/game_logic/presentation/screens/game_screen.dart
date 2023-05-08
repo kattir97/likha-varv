@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:likha_varv/features/game_logic/presentation/widgets/game_screen_buttons.dart';
-import 'package:likha_varv/features/game_logic/presentation/widgets/guessed_words_modal_widget.dart';
+import 'package:likha_varv/features/game_logic/presentation/widgets/guessed_words_overview_widget.dart';
 import 'package:likha_varv/features/game_logic/presentation/widgets/letters_widget.dart';
 import 'package:likha_varv/features/game_logic/presentation/widgets/user_input_widget.dart';
 import 'package:likha_varv/features/game_logic/domain/providers/game_logic_provider.dart';
@@ -23,7 +23,6 @@ class _GameScreenState extends ConsumerState<GameScreen> {
   Widget build(BuildContext context) {
     final gameLogic = ref.watch(gameLogicProvider.notifier);
     final letters = ref.watch(gameLogicProvider);
-    final guessedWords = gameLogic.userMatches;
 
     return Scaffold(
       appBar: const VarvAppBar(),
@@ -36,14 +35,14 @@ class _GameScreenState extends ConsumerState<GameScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(height: 50, child: ScorelineWidget()),
-                GuessedWordsModalWidget(guessedWords: guessedWords),
+                const GuessedWordsOverviewWidget(),
                 SizedBox(
                   height: 50,
                   child: UserInputWidget(controller: textController),
                 ),
                 const SizedBox(height: 10),
                 SizedBox(
-                  height: 200,
+                  height: 250,
                   child: Center(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 16),

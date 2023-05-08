@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:likha_varv/features/game_logic/presentation/utils/show_answer.dart';
+import 'package:likha_varv/features/game_logic/presentation/widgets/show_results_widget.dart';
 import 'package:likha_varv/features/info/info_dialog_widget.dart';
 import 'package:likha_varv/features/rankings/presentation/rankings_widget.dart';
 import 'package:line_icons/line_icons.dart';
@@ -40,20 +40,12 @@ class VarvAppBar extends ConsumerWidget implements PreferredSizeWidget {
           children: [
             IconButton(
               onPressed: () async {
-                return showAnswer(ref, context);
-              },
-              icon: const Icon(LineIcons.alternateRedo),
-            ),
-            IconButton(
-              icon: const Icon(
-                LineIcons.trophy,
-              ),
-              onPressed: () {
                 showDialog(
                   context: context,
-                  builder: (context) => const RankingsWidget(),
+                  builder: (context) => const ShowResultsWidget(),
                 );
               },
+              icon: const Icon(LineIcons.alternateRedo),
             ),
             IconButton(
               icon: const Icon(LineIcons.barChartAlt),

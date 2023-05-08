@@ -27,8 +27,8 @@ class RankingsWidget extends ConsumerWidget {
                 topRight: Radius.circular(16.0),
               ),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Stack(
+              alignment: Alignment.center,
               children: [
                 const Expanded(
                   child: Align(
@@ -43,12 +43,15 @@ class RankingsWidget extends ConsumerWidget {
                     ),
                   ),
                 ),
-                IconButton(
-                  icon: const Icon(Icons.close),
-                  color: Colors.white,
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
+                Align(
+                  alignment: Alignment.topRight,
+                  child: IconButton(
+                    icon: const Icon(Icons.close),
+                    color: Colors.white,
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
                 ),
               ],
             ),

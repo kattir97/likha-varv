@@ -21,28 +21,26 @@ class InfoDialogWidget extends StatelessWidget {
                 topRight: Radius.circular(16.0),
               ),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: Stack(
+              alignment: Alignment.center,
               children: [
-                const Expanded(
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'How to Play',
-                      style: TextStyle(
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
+                const Text(
+                  'How to Play',
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
                   ),
+                  textAlign: TextAlign.center,
                 ),
-                IconButton(
-                  icon: const Icon(Icons.close),
-                  color: Colors.white,
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
+                Align(
+                  alignment: Alignment.topRight,
+                  child: IconButton(
+                    icon: const Icon(Icons.close),
+                    color: Colors.white,
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
                 ),
               ],
             ),

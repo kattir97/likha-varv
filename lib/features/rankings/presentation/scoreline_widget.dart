@@ -68,9 +68,10 @@ class ScorelineWidget extends ConsumerWidget {
             Expanded(
               child: IgnorePointer(
                 child: CustomSliderWidget(
-                    possibleScore: possibleScore,
-                    score: score,
-                    service: service),
+                  possibleScore: possibleScore,
+                  score: score,
+                  service: service,
+                ),
               ),
             ),
             const Icon(

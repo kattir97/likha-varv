@@ -11,16 +11,16 @@ class WordsModal extends ConsumerWidget {
     ref.watch(gameLogicProvider);
     final gameLogic = ref.read(gameLogicProvider.notifier);
     final guessedWords = gameLogic.userMatches;
-    final List<Word> words = gameLogic.rawList
+    List<Word> words = gameLogic.rawList
         .where((word) => guessedWords.contains(word.headword))
         .toList();
 
     return Container(
       color: Colors.white,
       padding: const EdgeInsets.all(8.0),
-      child: ListView.separated(
+      child: ListView.builder(
         padding: const EdgeInsets.all(0),
-        separatorBuilder: (context, index) => const Divider(),
+        // separatorBuilder: (context, index) => const Divider(),
         itemCount: words.length,
         itemBuilder: (context, index) {
           final word = words[index];
@@ -28,10 +28,19 @@ class WordsModal extends ConsumerWidget {
               word.definitions?.map((def) => def.translation).toList();
           return ListTile(
             visualDensity: const VisualDensity(horizontal: 0, vertical: -4),
-            contentPadding: const EdgeInsets.only(top: 0.0, bottom: 0.0),
-            title: Text(word.headword!),
+            title: Text(
+              word.headword!,
+            ),
             subtitle: Text(
               definitions!.where((element) => element != null).join(', '),
+            ),
+            trailing: Badge(
+              label: Text(
+                '+${word.headword?.length}',
+                style:
+                    const TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
+              ),
+              backgroundColor: Colors.lightGreen,
             ),
           );
         },

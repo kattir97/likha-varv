@@ -17,41 +17,39 @@ class CustomSliderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SfSliderTheme(
-        data: SfSliderThemeData(
-          thumbRadius: 13,
-          thumbColor: Colors.amber,
-          inactiveDividerColor: Colors.grey,
-          activeDividerColor: Colors.amber,
-          activeTrackColor: Colors.amber,
-          inactiveTrackColor: Colors.lightBlue,
-          inactiveDividerRadius: 6.0,
-          activeDividerRadius: 6.0,
-          overlayColor: Colors.transparent,
-        ),
-        child: SfSlider(
-          min: 0,
-          max: possibleScore,
-          value: score,
-          interval: (possibleScore / 8),
-          showLabels: false,
-          showTicks: false,
-          showDividers: false,
-          thumbIcon: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                score.toString(),
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.normal,
-                ),
+    return SfSliderTheme(
+      data: SfSliderThemeData(
+        thumbRadius: 13,
+        thumbColor: Colors.amber,
+        inactiveDividerColor: Colors.grey,
+        activeDividerColor: Colors.amber,
+        activeTrackColor: Colors.amber,
+        inactiveTrackColor: Colors.lightBlue,
+        inactiveDividerRadius: 6.0,
+        activeDividerRadius: 6.0,
+        overlayColor: Colors.transparent,
+      ),
+      child: SfSlider(
+        min: 0,
+        max: possibleScore,
+        value: score,
+        interval: (possibleScore / 8),
+        showLabels: false,
+        showTicks: false,
+        showDividers: false,
+        thumbIcon: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              score.toString(),
+              style: const TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.normal,
               ),
-            ],
-          ),
-          onChanged: (dynamic value) {},
+            ),
+          ],
         ),
+        onChanged: (dynamic value) {},
       ),
     );
   }
