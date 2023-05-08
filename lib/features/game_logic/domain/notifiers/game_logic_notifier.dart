@@ -11,6 +11,7 @@ class GameLogic extends StateNotifier<List<String>> {
   GameLogic() : super([]);
 
   List<Word> words = [];
+  Set<Word> selectedWords = {};
   List<String> letters = letterList;
   int score = 0;
   List<String> userMatches = [];
@@ -73,21 +74,23 @@ class GameLogic extends StateNotifier<List<String>> {
   }
 
   void generatePossibleMatches() {
-    Set<String> possibleMatchesSet = {};
-    for (var word in words.map((w) => w.headword!)) {
+    selectedWords.clear();
+    possibleMatches.clear();
+    for (var word in words) {
       var possible = true;
-      for (int i = 0; i < word.length; i++) {
-        String letter = word[i];
+      var headword = word.headword!;
+      for (int i = 0; i < headword.length; i++) {
+        var letter = headword[i];
         if (!state.contains(letter)) {
           possible = false;
           break;
         }
       }
-      if (possible) {
-        possibleMatchesSet.add(word);
+      if (possible && !possibleMatches.contains(headword)) {
+        selectedWords.add(word);
+        possibleMatches.add(headword);
       }
     }
-    possibleMatches = possibleMatchesSet.toList();
     print(possibleMatches);
   }
 
