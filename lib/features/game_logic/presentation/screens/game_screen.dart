@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:likha_varv/features/game_logic/presentation/widgets/game_screen_buttons.dart';
@@ -21,6 +22,10 @@ class _GameScreenState extends ConsumerState<GameScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(
+      const Duration(microseconds: 500),
+      () => FlutterNativeSplash.remove(),
+    );
     final gameLogic = ref.watch(gameLogicProvider.notifier);
     final letters = ref.watch(gameLogicProvider);
 

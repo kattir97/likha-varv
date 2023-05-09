@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:likha_varv/core/providers/dictionary_provider.dart';
 import 'package:likha_varv/features/game_logic/presentation/screens/game_screen.dart';
 import 'package:likha_varv/features/game_logic/domain/providers/check_prefs_provider.dart';
 
-void main() {
+void main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
   runApp(const ProviderScope(child: MyApp()));
 }
 
