@@ -3,7 +3,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:likha_varv/core/models/word.dart';
 import 'package:likha_varv/features/game_logic/domain/providers/game_logic_provider.dart';
 import 'package:likha_varv/features/game_logic/presentation/widgets/light_blue_button_widget.dart';
-import 'package:likha_varv/shared/custom_list_tile.dart';
 
 class ShowResultsWidget extends ConsumerWidget {
   const ShowResultsWidget({super.key});
