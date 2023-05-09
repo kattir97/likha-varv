@@ -16,7 +16,7 @@ class CongratsMessage extends ConsumerWidget {
     final guessedWords = ref.read(gameLogicProvider.notifier).userMatches;
     final gameLogic = ref.read(gameLogicProvider.notifier);
     final posMatches = gameLogic.possibleMatches;
-    final List<Word> wordsRaw = gameLogic.rawList;
+    final List<Word> wordsRaw = gameLogic.words;
     final words = wordsRaw.where((word) {
       // print('word: ${word.headword}');
       return posMatches.contains(word.headword);
