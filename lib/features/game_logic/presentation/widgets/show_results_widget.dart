@@ -12,7 +12,7 @@ class ShowResultsWidget extends ConsumerWidget {
     final gameLogic = ref.read(gameLogicProvider.notifier);
     final posMatches = gameLogic.possibleMatches;
     final userMatches = gameLogic.userMatches;
-    final List<Word> wordsRaw = gameLogic.rawList;
+    final List<Word> wordsRaw = gameLogic.words;
     final words = wordsRaw.where((word) {
       // print('word: ${word.headword}');
       return posMatches.contains(word.headword);
