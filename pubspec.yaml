@@ -45,6 +45,7 @@ dependencies:
   syncfusion_flutter_sliders: ^21.2.3
   line_icons: ^2.0.1
   syncfusion_flutter_core: ^21.2.3
+  url_launcher: ^6.1.11
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +75,8 @@ flutter:
   assets:
     - assets/aghul.json
     - assets/icons/bee.svg
+    - assets/images/bazur.png
+    - assets/images/avdan.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

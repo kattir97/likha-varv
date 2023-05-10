@@ -25,6 +25,7 @@ class GameLogic extends StateNotifier<List<String>> {
     await SharedPrefsService.saveUserMatches(userMatches);
     await SharedPrefsService.savePossibleMatches(possibleMatches);
     await SharedPrefsService.saveGeneratedLetters(state);
+    await SharedPrefsService.saveSelectedWords(selectedWords);
   }
 
   Future<void> loadGameData() async {
@@ -32,6 +33,7 @@ class GameLogic extends StateNotifier<List<String>> {
     userMatches = await SharedPrefsService.getUserMatches();
     possibleMatches = await SharedPrefsService.getPossibleMatches();
     state = await SharedPrefsService.getGeneratedLetters();
+    selectedWords = await SharedPrefsService.getSelectedWords();
     state = List.from(state);
   }
 

@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:likha_varv/core/models/word.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefsService {
@@ -7,6 +10,7 @@ class SharedPrefsService {
   static const String possibleMatchesKey = 'possibleMatches';
   static const String isFirstOpenKey = 'isFirstOpen';
   static const String generatedLettersKey = 'generated_letters';
+  static const String selectedWordsKey = 'selected_words';
 
   static Future<int> getScore() async {
     final prefs = await SharedPreferences.getInstance();
@@ -36,6 +40,25 @@ class SharedPrefsService {
   static Future<void> savePossibleMatches(List<String> possibleMatches) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setStringList(possibleMatchesKey, possibleMatches);
+  }
+
+  static Future<void> saveSelectedWords(Set<Word> selectedWords) async {
+    final prefs = await SharedPreferences.getInstance();
+    final encodedData = selectedWords.map((word) => word.toJson()).toList();
+    final encodedString = jsonEncode(encodedData);
+    await prefs.setString(selectedWordsKey, encodedString);
+  }
+
+  static Future<Set<Word>> getSelectedWords() async {
+    final prefs = await SharedPreferences.getInstance();
+    final encodedString = prefs.getString(selectedWordsKey);
+    if (encodedString != null) {
+      final decodedData = jsonDecode(encodedString) as List<dynamic>;
+      final selectedWords =
+          decodedData.map((json) => Word.fromJson(json)).toSet();
+      return selectedWords;
+    }
+    return Set<Word>();
   }
 
   static Future<List<String>> getGeneratedLetters() async {

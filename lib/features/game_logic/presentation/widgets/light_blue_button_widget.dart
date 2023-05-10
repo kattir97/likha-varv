@@ -27,7 +27,7 @@ class LightBlueButtonWidget extends StatelessWidget {
       child: TextButton(
         onPressed: onTap,
         style: TextButton.styleFrom(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(8.0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.0),
           ),

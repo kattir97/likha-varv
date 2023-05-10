@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:likha_varv/features/info/app_links.dart';
+import 'package:likha_varv/features/info/open_app_link.dart';
+import 'package:line_icons/line_icons.dart';
 
 class InfoDialogWidget extends StatelessWidget {
   const InfoDialogWidget({super.key});
@@ -50,7 +53,6 @@ class InfoDialogWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: const [
-                SizedBox(height: 16.0),
                 Text(
                   '1. Game starts with generated random letters. '
                   'You can also manually shuffle the letters by tapping the shuffle button.\n\n'
@@ -66,6 +68,57 @@ class InfoDialogWidget extends StatelessWidget {
                   'or when you tap "Finish". Good luck!',
                   style: TextStyle(fontSize: 14.0),
                   textAlign: TextAlign.left,
+                ),
+                SizedBox(height: 5),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.only(left: 5, right: 5),
+            decoration: const BoxDecoration(
+              color: Colors.amber,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(16.0),
+                bottomRight: Radius.circular(16.0),
+              ),
+            ),
+            child: Column(
+              children: [
+                InkWell(
+                  onTap: () => openAppLikn(url: AppLinks.bazurUrl),
+                  child: ListTile(
+                    visualDensity:
+                        const VisualDensity(horizontal: 0, vertical: -4),
+                    leading: Image.asset(
+                      'assets/images/bazur.png',
+                      width: 30,
+                      height: 30,
+                      color: Colors.black,
+                    ),
+                    title: const Text(
+                      'Bazur: Languages of Caucasus',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    trailing: const Icon(LineIcons.googlePlay),
+                  ),
+                ),
+                InkWell(
+                  onTap: () => openAppLikn(url: AppLinks.avdanUrl),
+                  child: ListTile(
+                    visualDensity:
+                        const VisualDensity(horizontal: 0, vertical: -4),
+                    leading: Image.asset(
+                      'assets/images/avdan.png',
+                      width: 30,
+                      height: 30,
+                      color: Colors.black,
+                    ),
+                    title: const Text(
+                      'Avdan: Native Language Cards',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    trailing: const Icon(LineIcons.googlePlay),
+                  ),
                 ),
               ],
             ),

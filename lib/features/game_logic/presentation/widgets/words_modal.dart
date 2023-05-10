@@ -13,6 +13,7 @@ class WordsModal extends ConsumerWidget {
     final words = gameLogic.selectedWords
         .where((word) => guessedWords.contains(word.headword))
         .toList();
+    print(words);
 
     return Container(
       color: Colors.white,

@@ -59,7 +59,8 @@ class ShowResultsWidget extends ConsumerWidget {
             ),
           ),
           const SizedBox(height: 10),
-          Expanded(
+          SizedBox(
+            height: 350,
             child: ListView.separated(
               shrinkWrap: true,
               padding: EdgeInsets.zero,
@@ -73,7 +74,7 @@ class ShowResultsWidget extends ConsumerWidget {
                 final MaterialColor color = isFound ? Colors.green : Colors.red;
                 return Container(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 2),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

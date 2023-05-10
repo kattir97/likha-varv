@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:likha_varv/features/game_logic/domain/notifiers/game_logic_notifier.dart';
 import 'package:likha_varv/features/game_logic/domain/providers/game_logic_provider.dart';
 import 'package:likha_varv/features/game_logic/presentation/widgets/words_modal.dart';
 import 'package:line_icons/line_icons.dart';
@@ -25,6 +24,8 @@ class GuessedWordsOverviewWidget extends ConsumerWidget {
         ),
       ),
       onTap: () => showModalBottomSheet(
+        isDismissible: true,
+        enableDrag: true,
         context: context,
         clipBehavior: Clip.hardEdge,
         shape: const RoundedRectangleBorder(
