@@ -13,14 +13,14 @@ class GuessedWordsOverviewWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     ref.watch(gameLogicProvider);
     final guessedWords = ref.read(gameLogicProvider.notifier).userMatches;
-    return InkWell(
+    final myScrollController = ScrollController();
+    return GestureDetector(
       child: ListTile(
         leading: const Icon(LineIcons.alternateListAlt),
         title: Text(
           guessedWords.join(', '),
           overflow: TextOverflow.ellipsis,
-          style: const TextStyle(
-              fontWeight: FontWeight.w500, color: Colors.black87),
+          style: const TextStyle(fontWeight: FontWeight.w500),
         ),
       ),
       onTap: () => showModalBottomSheet(
@@ -31,7 +31,7 @@ class GuessedWordsOverviewWidget extends ConsumerWidget {
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
         ),
-        builder: (BuildContext context) {
+        builder: (context) {
           return const WordsModal();
         },
       ),

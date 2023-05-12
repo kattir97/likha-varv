@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:likha_varv/common_widgets/dialog_header_widget.dart';
 import 'package:likha_varv/core/models/word.dart';
 import 'package:likha_varv/features/game_logic/domain/providers/game_logic_provider.dart';
 import 'package:likha_varv/features/game_logic/presentation/widgets/light_blue_button_widget.dart';
@@ -26,38 +27,7 @@ class ShowResultsWidget extends ConsumerWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              color: Colors.amber,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16.0),
-                topRight: Radius.circular(16.0),
-              ),
-            ),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                const Text(
-                  'Results',
-                  style: TextStyle(
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: IconButton(
-                    icon: const Icon(Icons.close),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
+          const DialogHeaderWidget(text: 'Results'),
           const SizedBox(height: 10),
           SizedBox(
             height: 350,

@@ -13,7 +13,7 @@ class UserInputWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        color: Colors.grey.shade200,
+        color: Theme.of(context).colorScheme.secondary,
       ),
       child: GestureDetector(
         onTap: () {

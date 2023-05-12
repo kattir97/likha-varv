@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:likha_varv/common_widgets/dialog_header_widget.dart';
 import 'package:likha_varv/features/info/app_links.dart';
 import 'package:likha_varv/features/info/open_app_link.dart';
 import 'package:line_icons/line_icons.dart';
@@ -16,38 +17,7 @@ class InfoDialogWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              color: Colors.amber,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(16.0),
-                topRight: Radius.circular(16.0),
-              ),
-            ),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                const Text(
-                  'How to Play',
-                  style: TextStyle(
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: IconButton(
-                    icon: const Icon(Icons.close),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
+          const DialogHeaderWidget(text: 'How to play'),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -75,9 +45,9 @@ class InfoDialogWidget extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.only(left: 5, right: 5),
-            decoration: const BoxDecoration(
-              color: Colors.amber,
-              borderRadius: BorderRadius.only(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primary,
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(16.0),
                 bottomRight: Radius.circular(16.0),
               ),
@@ -93,7 +63,7 @@ class InfoDialogWidget extends StatelessWidget {
                       'assets/images/bazur.png',
                       width: 30,
                       height: 30,
-                      color: Colors.black,
+                      color: Theme.of(context).colorScheme.onPrimary,
                     ),
                     title: const Text(
                       'Bazur: Languages of Caucasus',
@@ -111,7 +81,7 @@ class InfoDialogWidget extends StatelessWidget {
                       'assets/images/avdan.png',
                       width: 30,
                       height: 30,
-                      color: Colors.black,
+                      color: Theme.of(context).colorScheme.onPrimary,
                     ),
                     title: const Text(
                       'Avdan: Native Language Cards',

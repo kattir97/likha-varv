@@ -16,7 +16,7 @@ class WordsModal extends ConsumerWidget {
     print(words);
 
     return Container(
-      color: Colors.white,
+      color: Theme.of(context).colorScheme.background,
       padding: const EdgeInsets.all(8.0),
       child: ListView.builder(
         padding: const EdgeInsets.all(0),
@@ -30,6 +30,7 @@ class WordsModal extends ConsumerWidget {
             visualDensity: const VisualDensity(horizontal: 0, vertical: -4),
             title: Text(
               word.headword!,
+              style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
             ),
             subtitle: Text(
               definitions!.where((element) => element != null).join(', '),

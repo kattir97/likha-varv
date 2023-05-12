@@ -35,8 +35,8 @@ class LightBlueButtonWidget extends StatelessWidget {
         child: Text(
           title,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-            color: Colors.black,
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.onPrimary,
             fontSize: 16.0,
             fontWeight: FontWeight.bold,
           ),

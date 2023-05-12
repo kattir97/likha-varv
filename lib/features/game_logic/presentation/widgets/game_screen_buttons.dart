@@ -43,11 +43,12 @@ class GameScreenButtons extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: Colors.black,
+                  color: Theme.of(context).colorScheme.onPrimary,
                   width: 1,
                 ),
               ),
               child: IconButton(
+                color: Theme.of(context).colorScheme.onPrimary,
                 icon: const Icon(LineIcons.random),
                 onPressed: () {
                   gameLogic.shuffle();
