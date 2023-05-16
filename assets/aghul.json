@@ -5126,32 +5126,6 @@
     ]
   },
   {
-    "headword": "häz",
-    "language": "aghul",
-    "ipa": "ħaz",
-    "definitions": [
-      {
-        "translation": "sperm",
-        "tags": [
-          "body"
-        ]
-      }
-    ],
-    "forms": [
-      {
-        "meaning": "sperm",
-        "text": "häz"
-      },
-      {
-        "meaning": "sperm-ERG-SG",
-        "text": "häzu"
-      }
-    ],
-    "tags": [
-      "noun"
-    ]
-  },
-  {
     "headword": "sifat",
     "language": "aghul",
     "ipa": "siˈfat",
@@ -33332,32 +33306,6 @@
     ]
   },
   {
-    "headword": "mimith",
-    "language": "aghul",
-    "ipa": "miˈmitʼ",
-    "definitions": [
-      {
-        "translation": "penis of a kid",
-        "tags": [
-          "body"
-        ]
-      }
-    ],
-    "forms": [
-      {
-        "meaning": "penis",
-        "text": "mimith"
-      },
-      {
-        "meaning": "penis -ERG-SG",
-        "text": "mimithi"
-      }
-    ],
-    "tags": [
-      "noun"
-    ]
-  },
-  {
     "headword": "är",
     "language": "aghul",
     "ipa": "ʕar",
@@ -40864,37 +40812,6 @@
     "tags": [
       "noun",
       "russian"
-    ]
-  },
-  {
-    "note": "Koshan dialect\n* buthuth /buˈtʼutʼ/\n\nTpig speech of Aghul dialect\n* bith /bitʼ/\n  * bithithan /biˈtʼitan/",
-    "headword": "buth",
-    "language": "aghul",
-    "ipa": "butʼ",
-    "definitions": [
-      {
-        "translation": "penis",
-        "tags": [
-          "body"
-        ]
-      }
-    ],
-    "forms": [
-      {
-        "meaning": "penis",
-        "text": "buth"
-      },
-      {
-        "meaning": "penis -ERG-SG",
-        "text": "buthu"
-      },
-      {
-        "meaning": "penis -ERG-SG",
-        "text": "buthura"
-      }
-    ],
-    "tags": [
-      "noun"
     ]
   },
   {
@@ -61187,36 +61104,6 @@
     ]
   },
   {
-    "note": "Burkikhan dialect\n* gargur /ɡarˈɡur/\n\nUnknown speech\n* gargar /ɡarˈɡar/",
-    "headword": "gurgur",
-    "language": "aghul",
-    "ipa": "ɡurˈɡur",
-    "definitions": [
-      {
-        "translation": "bell"
-      },
-      {
-        "translation": "penis",
-        "tags": [
-          "body"
-        ]
-      }
-    ],
-    "forms": [
-      {
-        "meaning": "bell",
-        "text": "gurgur"
-      },
-      {
-        "meaning": "bell-ERG-SG",
-        "text": "gurguri"
-      }
-    ],
-    "tags": [
-      "noun"
-    ]
-  },
-  {
     "headword": "tavakkal",
     "language": "aghul",
     "ipa": "taˈwakːal",
@@ -63344,48 +63231,6 @@
     "tags": [
       "noun",
       "burshag"
-    ]
-  },
-  {
-    "headword": "biš",
-    "language": "aghul",
-    "ipa": "biʃ",
-    "definitions": [
-      {
-        "translation": "vagina",
-        "tags": [
-          "body"
-        ]
-      },
-      {
-        "translation": "cunt",
-        "tags": [
-          "body"
-        ]
-      },
-      {
-        "translation": "vulva",
-        "tags": [
-          "body"
-        ]
-      }
-    ],
-    "forms": [
-      {
-        "meaning": "vagina",
-        "text": "biš"
-      },
-      {
-        "meaning": "vagina -ERG-SG",
-        "text": "biši"
-      },
-      {
-        "meaning": "vagina -ERG-SG",
-        "text": "bišura"
-      }
-    ],
-    "tags": [
-      "noun"
     ]
   },
   {
@@ -67406,33 +67251,6 @@
         "tags": [
           "food"
         ]
-      }
-    ],
-    "tags": [
-      "noun"
-    ]
-  },
-  {
-    "note": "Koshan dialect\nmajir /maˈjir/ - plural form",
-    "headword": "maja",
-    "language": "aghul",
-    "ipa": "maˈja",
-    "definitions": [
-      {
-        "translation": "sperm",
-        "tags": [
-          "body"
-        ]
-      }
-    ],
-    "forms": [
-      {
-        "meaning": "sperm",
-        "text": "maja"
-      },
-      {
-        "meaning": "sperm-ERG-SG",
-        "text": "majaji"
       }
     ],
     "tags": [
