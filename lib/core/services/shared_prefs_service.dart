@@ -1,6 +1,8 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:likha_varv/core/models/word.dart';
+import 'package:likha_varv/features/theme/data/theme_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefsService {
@@ -11,6 +13,7 @@ class SharedPrefsService {
   static const String isFirstOpenKey = 'isFirstOpen';
   static const String generatedLettersKey = 'generated_letters';
   static const String selectedWordsKey = 'selected_words';
+  static const String themeKey = 'theme';
 
   static Future<int> getScore() async {
     final prefs = await SharedPreferences.getInstance();
@@ -80,5 +83,25 @@ class SharedPrefsService {
   static Future<void> setIsFirstOpen(bool value) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(isFirstOpenKey, value);
+  }
+
+  static Future<void> saveTheme(ThemeProvider theme) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(themeKey, theme.toString());
+  }
+
+  static Future<ThemeProvider> loadTheme() async {
+    final prefs = await SharedPreferences.getInstance();
+    ThemeProvider theme;
+    final themeString = prefs.getString(themeKey);
+    if (themeString != null) {
+      theme = ThemeProvider.values.firstWhere(
+        (value) => value.toString() == themeString,
+        orElse: () => ThemeProvider.light,
+      );
+      return theme;
+    } else {
+      return ThemeProvider.light;
+    }
   }
 }

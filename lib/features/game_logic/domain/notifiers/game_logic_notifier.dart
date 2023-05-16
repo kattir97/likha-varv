@@ -16,6 +16,7 @@ class GameLogic extends StateNotifier<List<String>> {
   int score = 0;
   List<String> userMatches = [];
   List<String> possibleMatches = [];
+  String theme = '';
   int get possibleScore =>
       possibleMatches.fold(0, (sum, word) => sum + word.length);
 

@@ -46,6 +46,7 @@ dependencies:
   line_icons: ^2.0.1
   syncfusion_flutter_core: ^21.2.3
   url_launcher: ^6.1.11
+  confetti: ^0.7.0
 
 dev_dependencies:
   flutter_test:

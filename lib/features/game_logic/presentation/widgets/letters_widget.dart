@@ -42,7 +42,7 @@ class Letters extends StatelessWidget {
             },
             child: LetterWidget(
               letter: letters.last,
-              bgColor: Colors.amber,
+              bgColor: const Color.fromRGBO(166, 198, 233, 1.0),
             ),
           ),
         ],

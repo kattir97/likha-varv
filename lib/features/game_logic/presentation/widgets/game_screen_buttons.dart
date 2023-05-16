@@ -62,12 +62,13 @@ class GameScreenButtons extends StatelessWidget {
                 final result =
                     gameLogic.checkWord(textController.text, context);
                 if (gameLogic.score == gameLogic.possibleScore) {
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return CongratsMessage(
-                          onRestartPressed: gameLogic.restart);
-                    },
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CongratsWidget(
+                        onRestartPressed: () => gameLogic.restart(),
+                      ),
+                    ),
                   );
                 } else {
                   if (result == Strings.alreadyFound) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:likha_varv/core/models/word.dart';
 import 'package:likha_varv/features/game_logic/domain/providers/game_logic_provider.dart';
 
 class WordsModal extends ConsumerWidget {
@@ -10,9 +11,10 @@ class WordsModal extends ConsumerWidget {
     ref.watch(gameLogicProvider);
     final gameLogic = ref.read(gameLogicProvider.notifier);
     final guessedWords = gameLogic.userMatches;
-    final words = gameLogic.selectedWords
+    List<Word> words = gameLogic.selectedWords
         .where((word) => guessedWords.contains(word.headword))
         .toList();
+    words.sort((a, b) => a.headword!.length.compareTo(b.headword!.length));
     print(words);
 
     return Container(

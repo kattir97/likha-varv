@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:likha_varv/common_widgets/dialog_header_widget.dart';
+import 'package:likha_varv/core/services/shared_prefs_service.dart';
 import 'package:likha_varv/features/theme/data/theme_provider.dart';
 import 'package:likha_varv/features/theme/domain/providers/theme_provider.dart';
 
@@ -38,6 +39,8 @@ class ThemeSwitchWidget extends ConsumerWidget {
                 ),
                 onTap: () {
                   ref.read(themeProvider.notifier).setLightTheme();
+                  SharedPrefsService.saveTheme(ThemeProvider.light);
+
                   Navigator.of(context).pop();
                 },
               ),
@@ -60,6 +63,7 @@ class ThemeSwitchWidget extends ConsumerWidget {
                 ),
                 onTap: () {
                   ref.read(themeProvider.notifier).setDarkTheme();
+                  SharedPrefsService.saveTheme(ThemeProvider.dark);
                   Navigator.of(context).pop();
                 },
               ),
