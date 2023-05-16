@@ -27,7 +27,28 @@ class ShowResultsWidget extends ConsumerWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const DialogHeaderWidget(text: 'Results'),
+          Container(
+            padding: const EdgeInsets.all(8.0),
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primary,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(16.0),
+                topRight: Radius.circular(16.0),
+              ),
+            ),
+            child: Column(
+              children: [
+                Text(
+                  'Results',
+                  style: TextStyle(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.onPrimary),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
           const SizedBox(height: 10),
           SizedBox(
             height: 350,

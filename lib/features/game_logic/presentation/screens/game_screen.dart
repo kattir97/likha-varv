@@ -43,7 +43,9 @@ class _GameScreenState extends ConsumerState<GameScreen> {
                 const GuessedWordsOverviewWidget(),
                 SizedBox(
                   height: 50,
-                  child: UserInputWidget(controller: textController),
+                  child: UserInputWidget(
+                    controller: textController,
+                  ),
                 ),
                 const SizedBox(height: 10),
                 SizedBox(

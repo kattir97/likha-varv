@@ -43,6 +43,7 @@ class VarvAppBar extends ConsumerWidget implements PreferredSizeWidget {
             IconButton(
               onPressed: () async {
                 showDialog(
+                  barrierDismissible: false,
                   context: context,
                   builder: (context) => const ShowResultsWidget(),
                 );
@@ -50,8 +51,13 @@ class VarvAppBar extends ConsumerWidget implements PreferredSizeWidget {
               icon: const Icon(LineIcons.alternateRedo),
             ),
             IconButton(
-              icon: const Icon(LineIcons.barChartAlt),
-              onPressed: () {},
+              icon: const Icon(LineIcons.trophy),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => const RankingsWidget(),
+                );
+              },
             ),
             IconButton(
               icon: const Icon(LineIcons.cog),
