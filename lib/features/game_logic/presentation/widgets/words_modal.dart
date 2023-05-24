@@ -18,8 +18,11 @@ class WordsModal extends ConsumerWidget {
     print(words);
 
     return Container(
-      color: Theme.of(context).colorScheme.background,
       padding: const EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(20.0)),
+        color: Theme.of(context).colorScheme.background,
+      ),
       child: ListView.builder(
         padding: const EdgeInsets.all(0),
         // separatorBuilder: (context, index) => const Divider(),

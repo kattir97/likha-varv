@@ -13,7 +13,6 @@ class GuessedWordsOverviewWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     ref.watch(gameLogicProvider);
     final guessedWords = ref.read(gameLogicProvider.notifier).userMatches;
-    final myScrollController = ScrollController();
     return GestureDetector(
       child: ListTile(
         leading: const Icon(LineIcons.alternateListAlt),
@@ -24,7 +23,9 @@ class GuessedWordsOverviewWidget extends ConsumerWidget {
         ),
       ),
       onTap: () => showModalBottomSheet(
+        isScrollControlled: true,
         isDismissible: true,
+        backgroundColor: Colors.transparent,
         enableDrag: true,
         context: context,
         clipBehavior: Clip.hardEdge,
@@ -32,7 +33,11 @@ class GuessedWordsOverviewWidget extends ConsumerWidget {
           borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
         ),
         builder: (context) {
-          return const WordsModal();
+          return DraggableScrollableSheet(
+            builder: (BuildContext context, ScrollController scrollController) {
+              return const WordsModal();
+            },
+          );
         },
       ),
     );
