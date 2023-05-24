@@ -16092,23 +16092,6 @@
     ]
   },
   {
-    "headword": "gudgudaj",
-    "language": "aghul",
-    "ipa": "gudˈgudaj",
-    "definitions": [
-      {
-        "note": "animals tecticals",
-        "translation": "testicle",
-        "tags": [
-          "body"
-        ]
-      }
-    ],
-    "tags": [
-      "noun"
-    ]
-  },
-  {
     "headword": "khesv",
     "language": "aghul",
     "ipa": "kʼesʷ",
@@ -39461,23 +39444,6 @@
     ]
   },
   {
-    "note": "Unknown speech\n* xur",
-    "headword": "xar",
-    "language": "aghul",
-    "ipa": "χar",
-    "definitions": [
-      {
-        "translation": "testicle",
-        "tags": [
-          "body"
-        ]
-      }
-    ],
-    "tags": [
-      "noun"
-    ]
-  },
-  {
     "note": "Ergative case of Koshan dialect\n* gapri /gapˈri/",
     "headword": "gap",
     "language": "aghul",
@@ -54220,32 +54186,6 @@
       {
         "meaning": "dagger",
         "text": "hänafi"
-      }
-    ],
-    "tags": [
-      "noun"
-    ]
-  },
-  {
-    "headword": "kač",
-    "language": "aghul",
-    "ipa": "kat͡ʃ",
-    "definitions": [
-      {
-        "translation": "bitch",
-        "tags": [
-          "animal"
-        ]
-      }
-    ],
-    "forms": [
-      {
-        "meaning": "bitch",
-        "text": "kač"
-      },
-      {
-        "meaning": "bitch-ERG-SG",
-        "text": "kača"
       }
     ],
     "tags": [

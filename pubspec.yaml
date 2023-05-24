@@ -78,6 +78,8 @@ flutter:
     - assets/icons/bee.svg
     - assets/images/bazur.png
     - assets/images/avdan.png
+    - assets/images/splash_light.png
+    - assets/images/splash_dark.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -105,8 +107,9 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_native_splash:
   color: "#ffffff"
-  # background_image: "lib/core/data/images/splash-back.png"
-  image: "assets/images/splash_light.png"
+  color_darl: "#000000"
+  image: assets/images/splash_light.png
+  image_dark: assets/images/splash_dark.png
 
 flutter_icons:
   android: "launcher_icon"
